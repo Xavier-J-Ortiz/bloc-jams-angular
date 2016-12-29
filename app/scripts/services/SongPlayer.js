@@ -72,7 +72,20 @@
                 setSong(song);
                 playSong(song);
             }            
-        };        
+        };
+        
+        SongPlayer.next = function() {
+     var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+     currentSongIndex++;
+            if (currentSongIndex > (currentAlbum.length - 1)) {
+                currentBuzzObject.stop();
+                SongPlayer.currentSong.playing = null;
+            } else {
+                var song = currentAlbum.songs[currentSongIndex];
+                setSong(song);
+                playSong(song);
+            }
+        };
         return SongPlayer;
     }
     
