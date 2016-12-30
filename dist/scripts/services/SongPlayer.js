@@ -69,7 +69,6 @@
             currentSongIndex--;            
             if (currentSongIndex < 0) {
                 stopSong(SongPlayer.currentSong);
-//                SongPlayer.currentSong.playing = null;
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
