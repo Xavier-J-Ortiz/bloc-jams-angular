@@ -6,13 +6,13 @@
             return currentAlbum.songs.indexOf(song);
         };
         SongPlayer.currentSong = null;
+        SongPlayer.volume = null;
         
          /**
          * @desc Current playback time (in seconds) of currently playing song
          * @type {Number}
          */
         SongPlayer.currentTime = null;
-        
         var currentBuzzObject = null;
          
          /**
@@ -109,7 +109,14 @@
             if (currentBuzzObject) {
                 currentBuzzObject.setTime(time);
             }
-        };    
+        };
+        
+        SongPlayer.setVolume = function (volume) {
+            
+            currentBuzzObject.setVolume(volume);
+            
+        }
+        
         return SongPlayer;
     }
     
